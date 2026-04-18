@@ -1,24 +1,27 @@
-﻿Console.WriteLine("Entar the invalid amount");
+﻿//Switch
 
-double amount = Convert.ToDouble (Console.ReadLine());
+Console.WriteLine("Enter number 1 : ");
+double num_1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter number 2 : ");
+double num_2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter the operator : ");
+char @operator = Convert.ToChar(Console.ReadLine());
 
-if (amount <= 0)
+switch (@operator)
 {
-    Console.WriteLine($"invalid amount : {amount}");
-}
-else if(amount >= 500)
-{
-    double discountAmount = (amount * 0.2);
-    double finalAmount = amount - discountAmount;
-    Console.WriteLine($"the final amount after discount (20%) : {finalAmount}");
-}
-else if(amount <500 && amount >= 300)
-{
-    double discountAmount = (amount * 0.1);
-    double finalAmount = amount - discountAmount;
-    Console.WriteLine($"the final amount after discount (10%) : {finalAmount}");
-}
-else
-{
-    Console.WriteLine($"the final amount : {amount}");
+    case '+':
+        Console.WriteLine($"the result of operator {@operator} for {num_1} and {num_2} is : {num_1 + num_2} ");
+            break;
+    case '-':
+        Console.WriteLine($"the result of operator {@operator} for {num_1} and {num_2} is : {num_1 - num_2} ");
+        break;
+    case '*':
+        Console.WriteLine($"the result of operator {@operator} for {num_1} and {num_2} is : {num_1 * num_2} ");
+        break;
+    case '/':
+        Console.WriteLine($"the result of operator {@operator} for {num_1} and {num_2} is : {num_1 / num_2} ");
+        break;
+    default:
+        Console.WriteLine($"Incorrect operator ");
+        break;
 }
